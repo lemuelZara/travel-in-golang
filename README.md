@@ -1,2 +1,3 @@
-# travel-in-golang
-🧐  Aprendendo a linguagem Go com TDD
+# Golang with TDD
+
+Aprendendo a linguagem Go usando TDD.
