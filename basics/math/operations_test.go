@@ -28,13 +28,6 @@ func Test_Operations(t *testing.T) {
 		assert.Equal(t, result, expected)
 	})
 
-	t.Run("should return correct sum all numbers of array", func(t *testing.T) {
-		expected := 22.3702
-		result := SumAll([]float64{1.254, 1.933, 7.4012, 3.6, 8.182})
-
-		assert.Equal(t, result, expected)
-	})
-
 	t.Run("should return correct subtraction", func(t *testing.T) {
 		expected := -2.65
 		result := Sub(2.34, 4.99)

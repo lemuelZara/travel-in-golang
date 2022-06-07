@@ -16,14 +16,6 @@ func Sum(num1, num2 float64) float64 {
 	return num1 + num2
 }
 
-func SumAll(nums []float64) (result float64) {
-	for _, v := range nums {
-		result += v
-	}
-
-	return result
-}
-
 func Sub(num1, num2 float64) float64 {
 	return ToFixed(num1-num2, 2)
 }
