@@ -1,0 +1,6 @@
+hi.com 10
+hi.com 10
+google.com 20
+google.com 9
+golang.org FOUR
+golang.org 6
