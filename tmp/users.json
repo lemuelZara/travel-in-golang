@@ -1,0 +1,29 @@
+[
+    {
+        "id": 10293812,
+        "username": "leee02",
+        "email": "lemuel@gmail",
+        "permissions": {
+            "read": true,
+            "write": true
+        }
+    },
+    {
+        "id": 9201923,
+        "username": "jo2d0",
+        "email": "joao@gmail",
+        "permissions": {
+            "read": true,
+            "write": false
+        }
+    },
+    {
+        "id": 123,
+        "username": "",
+        "email": "",
+        "permissions": {
+            "read": false,
+            "write": false
+        }
+    }
+]

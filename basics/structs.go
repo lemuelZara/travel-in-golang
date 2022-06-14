@@ -1,28 +1,44 @@
 package basics
 
-type Car struct {
-	Name  string
-	Brand string
+import (
+	"encoding/json"
+	"os"
+)
+
+type Permissions struct {
+	Read  bool `json:"read"`
+	Write bool `json:"write"`
 }
 
-type Person struct {
-	Name, LastName string
-	Age            int
-	Car            Car
+type User struct {
+	ID          int    `json:"id"`
+	Username    string `json:"username"`
+	Email       string `json:"email"`
+	Permissions `json:"permissions"`
 }
 
-var persons []Person = []Person{}
+func GetAll() (users []User) {
+	file, err := os.ReadFile("../tmp/users.json")
+	if err != nil {
+		panic(err)
+	}
 
-func Add(p Person) Person {
-	persons = append(persons, p)
+	err = json.Unmarshal(file, &users)
+	if err != nil {
+		panic(err)
+	}
 
-	return persons[len(persons)-1]
+	return users
 }
 
-func (p *Person) Update(Name string) {
-	p.Name = Name
-}
+func Add(user User) int {
+	users := GetAll()
 
-func GetAll() []Person {
-	return persons
+	users = append(users, user)
+
+	data, _ := json.Marshal(users)
+
+	_ = os.WriteFile("../tmp/users.json", data, 0644)
+
+	return user.ID
 }
